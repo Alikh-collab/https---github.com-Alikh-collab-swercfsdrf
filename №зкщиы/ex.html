@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first page</title>
+    <style>
+        img {
+            width: 100px;
+            border-radius: 50px;
+            float: left;
+            margin-right: 100px;
+        }
+
+        p {
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="wel-id">Welcome </h1>
+
+    <!-- 
+1. Элементтің мәтінін өзгерту
+✅ Тапсырма:
+
+HTML-де <p id="text">Сәлем, әлем!</p> деген элемент болсын.
+Батырманы басқанда бұл жазу "JavaScript керемет!" деп өзгеруі керек.
+    -->
+
+    <p id="text">Сәлем, әлем!</p>
+    <button onclick="changeText()">Өзгерту</button>
+
+    <!-- 
+    2. Жаңа элемент қосу
+✅ Тапсырма:
+
+Батырма басылған кезде "Жаңа элемент" деген <li> қосылуы керек.
+    -->
+
+    <ul id="list">
+        <li>Элемент 1</li>
+        <li>Элемент 2</li>
+    </ul>
+    <button onclick="addItem()">Элемент қосу</button>
+
+    <!-- 
+    3. Пішін енгізуін оқу (Form Input)
+✅ Тапсырма:
+
+Қолданушы аты-жөнін енгізеді, батырманы басқанда оның аты экранға шығады.
+    -->
+
+    <input type="text" id="nameInput" placeholder="Атыңызды енгізіңіз">
+    <button onclick="showName()">Көрсету</button>
+    <p id="output"> </p>
+
+
+    <script>
+    function changeText() {
+      document.getElementById("text").innerText = "JavaScript керемет!";
+    }
+
+    function addItem(){
+        const newItem = document.createElement("li");
+        newItem.innerText = "Жаңа элемент";
+        document.getElementById("list").appendChild(newItem);
+    }
+
+    function showName(){
+        document.getElementById("output").innerText = `Сіздің атыңыз: ${document.getElementById("nameInput").value}`;
+    }
+
+    </script>
+</body>
+</html>
